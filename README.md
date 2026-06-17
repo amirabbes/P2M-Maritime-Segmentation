@@ -81,18 +81,6 @@ Application Surveillini (temps réel)
 ## 📁 Structure du dépôt
 
 ```
-.
-├── data_collection/        # Script Python de collecte via API OpenAerialMap
-├── annotation/              # Pipeline SAM 3 + filtres post-traitement
-├── training/
-│   ├── sam3_finetuning/    # Notebooks/scripts fine-tuning SAM 3
-│   └── yolo11_finetuning/  # Notebooks/scripts fine-tuning YOLO11n/l
-├── evaluation/              # Scripts d'évaluation et métriques
-├── surveillini/             # Application web de surveillance maritime
-├── docs/
-│   └── Rapport_P2M_25_26.pdf
-└── README.md
-```
 
 ## 🚀 Installation & Utilisation
 
@@ -102,22 +90,10 @@ cd <nom-du-repo>
 pip install -r requirements.txt
 ```
 
-### Lancer l'inférence YOLO11
-
-```bash
-python evaluation/predict_yolo.py --weights training/yolo11_finetuning/best.pt --source path/to/image.png
-```
-
 ### Lancer l'application Surveillini
 
-```bash
-cd surveillini
-# instructions de lancement
+
 ```
-
-## 📄 Rapport complet
-
-Le rapport détaillé du projet (méthodologie, architecture, résultats, annexes) est disponible dans [`docs/Rapport_P2M_25_26.pdf`](docs/Rapport_P2M_25_26.pdf).
 
 ## 🔭 Perspectives
 
@@ -125,7 +101,4 @@ Le rapport détaillé du projet (méthodologie, architecture, résultats, annexe
 - Exploration de modèles plus récents (YOLO26)
 - Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
 
-[À définir]
-
----
 *SUP'COM — Université de Carthage — Année Universitaire 2025/2026*
