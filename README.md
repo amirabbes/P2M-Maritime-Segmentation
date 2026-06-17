@@ -88,4 +88,4 @@ Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fi
 - Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
 
 
-*SUP'COM — Université de Carthage — Année Universitaire 2025/2026*
+*SUP'COM — Université de Carthage — Année Universitaire : 2025/2026*
