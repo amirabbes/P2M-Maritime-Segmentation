@@ -34,10 +34,10 @@ Le pipeline couvre :
 | `yacht` 
 | `jet_ski` 
 | `bateau_peche` 
-| `navire_croisiere` | Navires de croisière |
-| `navire_militaire` | Navires militaires |
-| `remorqueur` | Remorqueurs |
-| `cargo` | Cargos / vraquiers |
+| `navire_croisiere` 
+| `navire_militaire` 
+| `remorqueur` 
+| `cargo` 
 
 ## 📊 Dataset
 
