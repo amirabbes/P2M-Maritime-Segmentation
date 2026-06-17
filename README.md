@@ -64,7 +64,7 @@ Application Surveillini (temps réel)
 - Répartition : **Train (840) / Validation (200) / Test (220)**
 - Format : images PNG + annotations XML CVAT (polygones de segmentation)
 
-📦 **Le dataset complet est disponible sur notre espace JupyterLab** : [lien à compléter]
+📦 **Le dataset complet est disponible via ce lien** : [lien à compléter]
 
 ## 🧠 Modèles entraînés
 
@@ -83,10 +83,10 @@ Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fi
 
 
 ### 🔭 Perspectives
-```
+
 - Enrichissement du dataset pour les classes sous-représentées (jet-ski, voilier, bateau de pêche)
 - Exploration de modèles plus récents (YOLO26)
 - Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
-```
+
 
 *SUP'COM — Université de Carthage — Année Universitaire 2025/2026*
