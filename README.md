@@ -16,8 +16,8 @@ Le pipeline couvre :
 
 ## 👥 Auteurs
 
-- **Abbes Amir**
-- **Harrabi Ines**
+- Abbes Amir
+- Harrabi Ines
 
 ## 🎓 Encadrants
 
