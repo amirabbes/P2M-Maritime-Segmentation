@@ -26,6 +26,24 @@ Le pipeline couvre :
 - M. Cabani Adnane 
 - M. Lucas Justin Yirepoa Kinda
 
+## 🏗️ Architecture du pipeline
+
+```
+OpenAerialMap (collecte) 
+        ↓
+SAM 3 (pré-annotation par prompts textuels)
+        ↓
+Filtres post-traitement (NMS, taille, forme, HSV)
+        ↓
+CVAT (correction manuelle)
+        ↓
+Dataset final (840/200/220)
+        ↓
+Fine-tuning SAM 3 & YOLO11 (n/l)
+        ↓
+Application Surveillini (temps réel)
+```
+
 ## 🗂️ Classes d'objets maritimes
 
 | Classe 
@@ -59,23 +77,7 @@ Le pipeline couvre :
 
 > 📈 Amélioration totale du mAP50-95 entre la 1ère et la dernière expérience YOLO : **+58.1%**
 
-## 🏗️ Architecture du pipeline
 
-```
-OpenAerialMap (collecte) 
-        ↓
-SAM 3 (pré-annotation par prompts textuels)
-        ↓
-Filtres post-traitement (NMS, taille, forme, HSV)
-        ↓
-CVAT (correction manuelle)
-        ↓
-Dataset final (840/200/220)
-        ↓
-Fine-tuning SAM 3 & YOLO11 (n/l)
-        ↓
-Application Surveillini (temps réel)
-```
 
 
 ## 🚀 Installation & Utilisation
