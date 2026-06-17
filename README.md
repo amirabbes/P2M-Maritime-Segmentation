@@ -28,12 +28,12 @@ Le pipeline couvre :
 
 ## 🗂️ Classes d'objets maritimes
 
-| Classe | Description |
-|---|---|
-| `voilier` | Voiliers |
-| `yacht` | Yachts de luxe |
-| `jet_ski` | Jet-skis |
-| `bateau_peche` | Bateaux de pêche / chalutiers |
+| Classe 
+|---
+| `voilier` 
+| `yacht` 
+| `jet_ski` 
+| `bateau_peche` 
 | `navire_croisiere` | Navires de croisière |
 | `navire_militaire` | Navires militaires |
 | `remorqueur` | Remorqueurs |
@@ -89,11 +89,13 @@ pip install -r requirements.txt
 ### Lancer l'application Surveillini
 
 ```
+```
 
-## 🔭 Perspectives
-
+### 🔭 Perspectives
+```
 - Enrichissement du dataset pour les classes sous-représentées (jet-ski, voilier, bateau de pêche)
 - Exploration de modèles plus récents (YOLO26)
 - Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
+```
 
 *SUP'COM — Université de Carthage — Année Universitaire 2025/2026*
