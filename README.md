@@ -23,8 +23,8 @@ Le pipeline couvre :
 
 - Mme. Abdelkefi Fatma
 - Mme. Trabelsi Rim
-- M. Cabani Adnane (ESIGELEC)
-- M. Lucas Justin Yirepoa Kinda (Doctorant, SUP'COM)
+- M. Cabani Adnane 
+- M. Lucas Justin Yirepoa Kinda
 
 ## 🗂️ Classes d'objets maritimes
 
@@ -77,9 +77,6 @@ Fine-tuning SAM 3 & YOLO11 (n/l)
 Application Surveillini (temps réel)
 ```
 
-## 📁 Structure du dépôt
-
-```
 
 ## 🚀 Installation & Utilisation
 
@@ -90,7 +87,6 @@ pip install -r requirements.txt
 ```
 
 ### Lancer l'application Surveillini
-
 
 ```
 
