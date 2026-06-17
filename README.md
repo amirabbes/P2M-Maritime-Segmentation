@@ -1,0 +1,131 @@
+# 🚢 Segmentation par Instance d'Objets Maritimes par Apprentissage Profond
+
+> Projet de Préparation Métier (P2M) — École Supérieure des Communications de Tunis (SUP'COM), Université de Carthage
+> Année Universitaire 2025/2026
+
+## 📋 Description
+
+Ce projet propose une chaîne de traitement complète pour la **surveillance maritime par apprentissage profond**, depuis la collecte automatisée d'images satellitaires jusqu'au déploiement de modèles de détection et de segmentation au sein d'une application web temps réel (**Surveillini**).
+
+Le pipeline couvre :
+- 🛰️ **Collecte automatisée** d'images satellitaires via l'API OpenAerialMap
+- 🏷️ **Annotation semi-automatique** avec SAM 3 (prompts textuels) + filtres post-traitement
+- ✏️ **Correction manuelle** des annotations via CVAT
+- 🧠 **Fine-tuning** de SAM 3 et YOLO11 (nano & large) sur 8 classes d'objets maritimes
+- 📊 **Évaluation comparative** (précision, rappel, mIoU, mAP50, mAP50-95)
+- 🌐 **Intégration** dans l'application web Surveillini
+
+## 👥 Auteurs
+
+- **Abbes Amir**
+- **Harrabi Ines**
+
+## 🎓 Encadrants
+
+- Mme. Abdelkefi Fatma
+- Mme. Trabelsi Rim
+- M. Cabani Adnane (ESIGELEC)
+- M. Lucas Justin Yirepoa Kinda (Doctorant, SUP'COM)
+
+## 🗂️ Classes d'objets maritimes
+
+| Classe | Description |
+|---|---|
+| `voilier` | Voiliers |
+| `yacht` | Yachts de luxe |
+| `jet_ski` | Jet-skis |
+| `bateau_peche` | Bateaux de pêche / chalutiers |
+| `navire_croisiere` | Navires de croisière |
+| `navire_militaire` | Navires militaires |
+| `remorqueur` | Remorqueurs |
+| `cargo` | Cargos / vraquiers |
+
+## 📊 Dataset
+
+- **1260 images** collectées (zones portuaires, multi-échelle, via OpenAerialMap)
+- Annotation semi-automatique (SAM 3) + correction manuelle (CVAT)
+- Répartition : **Train (840) / Validation (200) / Test (220)**
+- Format : images PNG + annotations XML CVAT (polygones de segmentation)
+
+📦 **Le dataset complet est disponible sur notre espace JupyterLab** : [lien à compléter]
+
+## 🧠 Modèles entraînés
+
+| Modèle | Tâche | mAP50-95 (Test) |
+|---|---|---|
+| SAM 3 (fine-tuné) | Segmentation par instance | 0.809 (mIoU seg) |
+| YOLO11n (sans augmentation) | Détection | 0.246 |
+| YOLO11n (avec augmentation) | Détection | 0.326 |
+| YOLO11l (avec augmentation) | Détection | **0.389** |
+
+> 📈 Amélioration totale du mAP50-95 entre la 1ère et la dernière expérience YOLO : **+58.1%**
+
+## 🏗️ Architecture du pipeline
+
+```
+OpenAerialMap (collecte) 
+        ↓
+SAM 3 (pré-annotation par prompts textuels)
+        ↓
+Filtres post-traitement (NMS, taille, forme, HSV)
+        ↓
+CVAT (correction manuelle)
+        ↓
+Dataset final (840/200/220)
+        ↓
+Fine-tuning SAM 3 & YOLO11 (n/l)
+        ↓
+Application Surveillini (temps réel)
+```
+
+## 📁 Structure du dépôt
+
+```
+.
+├── data_collection/        # Script Python de collecte via API OpenAerialMap
+├── annotation/              # Pipeline SAM 3 + filtres post-traitement
+├── training/
+│   ├── sam3_finetuning/    # Notebooks/scripts fine-tuning SAM 3
+│   └── yolo11_finetuning/  # Notebooks/scripts fine-tuning YOLO11n/l
+├── evaluation/              # Scripts d'évaluation et métriques
+├── surveillini/             # Application web de surveillance maritime
+├── docs/
+│   └── Rapport_P2M_25_26.pdf
+└── README.md
+```
+
+## 🚀 Installation & Utilisation
+
+```bash
+git clone https://github.com/<votre-utilisateur>/<nom-du-repo>.git
+cd <nom-du-repo>
+pip install -r requirements.txt
+```
+
+### Lancer l'inférence YOLO11
+
+```bash
+python evaluation/predict_yolo.py --weights training/yolo11_finetuning/best.pt --source path/to/image.png
+```
+
+### Lancer l'application Surveillini
+
+```bash
+cd surveillini
+# instructions de lancement
+```
+
+## 📄 Rapport complet
+
+Le rapport détaillé du projet (méthodologie, architecture, résultats, annexes) est disponible dans [`docs/Rapport_P2M_25_26.pdf`](docs/Rapport_P2M_25_26.pdf).
+
+## 🔭 Perspectives
+
+- Enrichissement du dataset pour les classes sous-représentées (jet-ski, voilier, bateau de pêche)
+- Exploration de modèles plus récents (YOLO26)
+- Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
+
+[À définir]
+
+---
+*SUP'COM — Université de Carthage — Année Universitaire 2025/2026*
