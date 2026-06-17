@@ -1,6 +1,6 @@
 # 🚢 Segmentation par Instance d'Objets Maritimes par Apprentissage Profond
 
-> Projet de Préparation Métier (P2M) — École Supérieure des Communications de Tunis (SUP'COM), Année Universitaire 2025/2026
+> Projet de Préparation Métier (P2M) — École Supérieure des Communications de Tunis (SUP'COM) — Année Universitaire 2025/2026
 
 ## 📋 Description
 
