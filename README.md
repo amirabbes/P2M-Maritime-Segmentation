@@ -8,7 +8,7 @@ Ce projet propose une chaîne de traitement complète pour la **surveillance mar
 
 Le pipeline couvre :
 - 🛰️ **Collecte automatisée** d'images satellitaires via l'API OpenAerialMap
-- 🏷️ **Annotation semi-automatique** avec SAM 3 (prompts textuels) + filtres post-traitement
+- 🏷️ **Annotation semi-automatique** avec SAM 3 
 - ✏️ **Correction manuelle** des annotations via CVAT
 - 🧠 **Fine-tuning** de SAM 3 et YOLO11 (nano & large) sur 8 classes d'objets maritimes
 - 📊 **Évaluation comparative** (précision, rappel, mIoU, mAP50, mAP50-95)
@@ -41,7 +41,7 @@ Dataset final (840/200/220)
         ↓
 Fine-tuning SAM 3 & YOLO11 (n/l)
         ↓
-Application Surveillini (temps réel)
+Application Surveillini 
 ```
 
 ## 🗂️ Classes d'objets maritimes
@@ -73,13 +73,12 @@ Application Surveillini (temps réel)
 | SAM 3 (fine-tuné) | Segmentation par instance | 0.809 (mIoU seg) |
 | YOLO11n (sans augmentation) | Détection | 0.246 |
 | YOLO11n (avec augmentation) | Détection | 0.326 |
-| YOLO11l (avec augmentation) | Détection | **0.389** |
+| YOLO11l (avec augmentation) | Détection | 0.389 |
 
 > 📈 Amélioration totale du mAP50-95 entre la 1ère et la dernière expérience YOLO : **+58.1%**
 
 ## Résultats et nouveaux paramètres :
-Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fin de la phase de finetuning : 
- https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
+Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fin de la phase de finetuning : https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
 
 
 ### 🔭 Perspectives
