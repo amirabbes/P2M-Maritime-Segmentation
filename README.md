@@ -78,7 +78,7 @@ Application Surveillini (temps réel)
 > 📈 Amélioration totale du mAP50-95 entre la 1ère et la dernière expérience YOLO : **+58.1%**
 
 ## Résultats et nouveaux paramètres:
- ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fin de la phase de finetuning : 
+Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fin de la phase de finetuning : 
  https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
 
 
