@@ -26,12 +26,12 @@ The pipeline covers:
 
 ```mermaid
 flowchart TD
-    A[🛰️ OpenAerialMap<br/>Collecte d'images] --> B[🏷️ SAM 3<br/>Pré-annotation par prompts textuels]
-    B --> C[🔧 Filtres post-traitement<br/>NMS, taille, forme, HSV]
-    C --> D[✏️ CVAT<br/>Correction manuelle]
-    D --> E[📦 Dataset final<br/>840/200/220]
+    A[🛰️ OpenAerialMap<br/>Image collection] --> B[🏷️ SAM 3<br/>Pre-annotation via text prompts]
+    B --> C[🔧 Post-processing filters<br/>NMS, size, shape, HSV]
+    C --> D[✏️ CVAT<br/>Manual correction]
+    D --> E[📦 Final dataset<br/>840/200/220]
     E --> F[🧠 Fine-tuning<br/>SAM 3 & YOLO11 n/l]
-    F --> G[🌐 Application Surveillini]
+    F --> G[🌐 Surveillini application]
 ```
 
 ## 🗂️ Maritime Object Classes
