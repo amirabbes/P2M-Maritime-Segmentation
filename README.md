@@ -22,21 +22,17 @@ The pipeline covers:
 - Mr. Cabani Adnane
 - Mr. Lucas Justin Yirepoa Kinda
 
-## 🏗️ Pipeline Architecture
+## 🏗️ Architecture du pipeline
 
-OpenAerialMap (collection)
-↓
-SAM 3 (pre-annotation via text prompts)
-↓
-Post-processing filters (NMS, size, shape, HSV)
-↓
-CVAT (manual correction)
-↓
-Final dataset (840/200/220)
-↓
-Fine-tuning SAM 3 & YOLO11 (n/l)
-↓
-Surveillini application
+```mermaid
+flowchart TD
+    A[🛰️ OpenAerialMap<br/>Collecte d'images] --> B[🏷️ SAM 3<br/>Pré-annotation par prompts textuels]
+    B --> C[🔧 Filtres post-traitement<br/>NMS, taille, forme, HSV]
+    C --> D[✏️ CVAT<br/>Correction manuelle]
+    D --> E[📦 Dataset final<br/>840/200/220]
+    E --> F[🧠 Fine-tuning<br/>SAM 3 & YOLO11 n/l]
+    F --> G[🌐 Application Surveillini]
+```
 
 ## 🗂️ Maritime Object Classes
 | Class |
