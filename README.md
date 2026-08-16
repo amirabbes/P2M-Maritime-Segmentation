@@ -1,91 +1,79 @@
-# 🚢 Segmentation par Instance d'Objets Maritimes par Apprentissage Profond
-
-> Projet de Préparation Métier (P2M) — École Supérieure des Communications de Tunis (SUP'COM) — Année Universitaire : 2025/2026
+# 🚢 Instance Segmentation of Maritime Objects Using Deep Learning
+> Career Preparation Project (P2M) — Higher School of Communication of Tunis (SUP'COM) — Academic Year: 2025/2026
 
 ## 📋 Description
+This project proposes a complete processing pipeline for **maritime surveillance using deep learning**, from automated satellite image collection to the deployment of detection and segmentation models within a real-time web application (**Surveillini**).
 
-Ce projet propose une chaîne de traitement complète pour la **surveillance maritime par apprentissage profond**, depuis la collecte automatisée d'images satellitaires jusqu'au déploiement de modèles de détection et de segmentation au sein d'une application web temps réel (**Surveillini**).
+The pipeline covers:
+- 🛰️ **Automated collection** of satellite images via the OpenAerialMap API
+- 🏷️ **Semi-automatic annotation** with SAM 3
+- ✏️ **Manual correction** of annotations via CVAT
+- 🧠 **Fine-tuning** of SAM 3 and YOLO11 (nano & large) on 8 maritime object classes
+- 📊 **Comparative evaluation** (precision, recall, mIoU, mAP50, mAP50-95)
+- 🌐 **Integration** into the Surveillini web application
 
-Le pipeline couvre :
-- 🛰️ **Collecte automatisée** d'images satellitaires via l'API OpenAerialMap
-- 🏷️ **Annotation semi-automatique** avec SAM 3 
-- ✏️ **Correction manuelle** des annotations via CVAT
-- 🧠 **Fine-tuning** de SAM 3 et YOLO11 (nano & large) sur 8 classes d'objets maritimes
-- 📊 **Évaluation comparative** (précision, rappel, mIoU, mAP50, mAP50-95)
-- 🌐 **Intégration** dans l'application web Surveillini
-
-## 👥 Auteurs
-
+## 👥 Authors
 - Abbes Amir
 - Harrabi Ines
 
-## 🎓 Encadrants
+## 🎓 Supervisors
+- Mrs. Abdelkefi Fatma
+- Mrs. Trabelsi Rim
+- Mr. Cabani Adnane
+- Mr. Lucas Justin Yirepoa Kinda
 
-- Mme. Abdelkefi Fatma
-- Mme. Trabelsi Rim
-- M. Cabani Adnane 
-- M. Lucas Justin Yirepoa Kinda
+## 🏗️ Pipeline Architecture
 
-## 🏗️ Architecture du pipeline
-
-```
-OpenAerialMap (collecte) 
-        ↓
-SAM 3 (pré-annotation par prompts textuels)
-        ↓
-Filtres post-traitement (NMS, taille, forme, HSV)
-        ↓
-CVAT (correction manuelle)
-        ↓
-Dataset final (840/200/220)
-        ↓
+OpenAerialMap (collection)
+↓
+SAM 3 (pre-annotation via text prompts)
+↓
+Post-processing filters (NMS, size, shape, HSV)
+↓
+CVAT (manual correction)
+↓
+Final dataset (840/200/220)
+↓
 Fine-tuning SAM 3 & YOLO11 (n/l)
-        ↓
-Application Surveillini 
-```
+↓
+Surveillini application
 
-## 🗂️ Classes d'objets maritimes
-
-| Classe 
-|---
-| `voilier` 
-| `yacht` 
-| `jet_ski` 
-| `bateau_peche` 
-| `navire_croisiere` 
-| `navire_militaire` 
-| `remorqueur` 
-| `cargo` 
+## 🗂️ Maritime Object Classes
+| Class |
+|---|
+| `sailboat` |
+| `yacht` |
+| `jet_ski` |
+| `fishing_boat` |
+| `cruise_ship` |
+| `military_ship` |
+| `tugboat` |
+| `cargo_ship` |
 
 ## 📊 Dataset
+- **1260 images** collected (port areas, multi-scale, via OpenAerialMap)
+- Semi-automatic annotation (SAM 3) + manual correction (CVAT)
+- Split: **Train (840) / Validation (200) / Test (220)**
+- Format: PNG images + CVAT XML annotations (segmentation polygons)
 
-- **1260 images** collectées (zones portuaires, multi-échelle, via OpenAerialMap)
-- Annotation semi-automatique (SAM 3) + correction manuelle (CVAT)
-- Répartition : **Train (840) / Validation (200) / Test (220)**
-- Format : images PNG + annotations XML CVAT (polygones de segmentation)
+📦 **The complete dataset is available via this link**: https://supcom-my.sharepoint.com/:f:/g/personal/amir_abbes_supcom_tn/IgDyzgE6X3UUQ45RmR51t0qvAVit7FN7Hh0Kqpf_QK6ll_M?e=e6WlBa
 
-📦 **Le dataset complet est disponible via ce lien** : https://supcom-my.sharepoint.com/:f:/g/personal/amir_abbes_supcom_tn/IgDyzgE6X3UUQ45RmR51t0qvAVit7FN7Hh0Kqpf_QK6ll_M?e=e6WlBa
-
-## 🧠 Modèles entraînés
-
-| Modèle | Tâche | mAP50-95 (Test) |
+## 🧠 Trained Models
+| Model | Task | mAP50-95 (Test) |
 |---|---|---|
-| SAM 3 (fine-tuné) | Segmentation par instance | 0.809 (mIoU seg) |
-| YOLO11n (sans augmentation) | Détection | 0.246 |
-| YOLO11n (avec augmentation) | Détection | 0.326 |
-| YOLO11l (avec augmentation) | Détection | 0.389 |
+| SAM 3 (fine-tuned) | Instance segmentation | 0.809 (mIoU seg) |
+| YOLO11n (without augmentation) | Detection | 0.246 |
+| YOLO11n (with augmentation) | Detection | 0.326 |
+| YOLO11l (with augmentation) | Detection | 0.389 |
 
-> 📈 Amélioration totale du mAP50-95 entre la 1ère et la dernière expérience YOLO : **+58.1%**
+> 📈 Total mAP50-95 improvement between the 1st and last YOLO experiment: **+58.1%**
 
-## Résultats et nouveaux paramètres :
-Ce lien vous ramène à un fichier contenant les nouveaux poids obtenus à la fin de la phase de finetuning : https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
+## Results and new parameters:
+This link takes you to a file containing the new weights obtained at the end of the fine-tuning phase: https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
 
+### 🔭 Future Directions
+- Enriching the dataset for underrepresented classes (jet ski, sailboat, fishing boat)
+- Exploring more recent models (YOLO26)
+- Hybrid SAM 3 + YOLO11 pipeline (segmentation accuracy + detection speed)
 
-### 🔭 Perspectives
-
-- Enrichissement du dataset pour les classes sous-représentées (jet-ski, voilier, bateau de pêche)
-- Exploration de modèles plus récents (YOLO26)
-- Pipeline hybride SAM 3 + YOLO11 (précision de segmentation + rapidité de détection)
-
-
-*SUP'COM — Université de Carthage — Année Universitaire : 2025/2026*
+*SUP'COM — University of Carthage — Academic Year: 2025/2026*
