@@ -22,7 +22,7 @@ The pipeline covers:
 - Mr. Cabani Adnane
 - Mr. Lucas Justin Yirepoa Kinda
 
-## 🏗️ Architecture du pipeline
+## 🏗️ Pipeline Architecture
 
 ```mermaid
 flowchart TD
@@ -58,7 +58,6 @@ flowchart TD
 | Model | Task | mAP50-95 (Test) |
 |---|---|---|
 | SAM 3 (fine-tuned) | Instance segmentation | 0.809 (mIoU seg) |
-| YOLO11n (without augmentation) | Detection | 0.246 |
 | YOLO11n (with augmentation) | Detection | 0.326 |
 | YOLO11l (with augmentation) | Detection | 0.389 |
 
