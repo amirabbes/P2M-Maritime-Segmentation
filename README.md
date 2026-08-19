@@ -57,9 +57,9 @@ flowchart TD
 ## 🧠 Trained Models
 | Model | Task | mAP50-95 (Test) |
 |---|---|---|
-| SAM 3 (fine-tuned) | Instance segmentation | 0.809 (mIoU seg) |
-| YOLO11n (with augmentation) | Detection | 0.326 |
-| YOLO11l (with augmentation) | Detection | 0.389 |
+| SAM 3  | Instance segmentation | 0.809 (mIoU seg) |
+| YOLO11n  | Detection | 0.326 |
+| YOLO11l  | Detection | 0.389 |
 
 > 📈 Total mAP50-95 improvement between the 1st and last YOLO experiment: **+58.1%**
 
