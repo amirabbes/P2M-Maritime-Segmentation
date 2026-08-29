@@ -55,13 +55,16 @@ flowchart TD
 📦 **The complete dataset is available via this link**: https://supcom-my.sharepoint.com/:f:/g/personal/amir_abbes_supcom_tn/IgDyzgE6X3UUQ45RmR51t0qvAVit7FN7Hh0Kqpf_QK6ll_M?e=e6WlBa
 
 ## 🧠 Trained Models
-| Model | Task | mAP50-95 (Test) |
-|---|---|---|
-| SAM 3  | Instance segmentation | 0.809 (mIoU seg) |
-| YOLO11n  | Detection | 0.326 |
-| YOLO11l  | Detection | 0.389 |
 
-> 📈 Total mAP50-95 improvement between the 1st and last YOLO experiment: **+58.1%**
+Performance on the test set:
+
+| Model | Task | Precision | Recall | mIoU | mAP50 | mAP50:95 |
+|---|---|---:|---:|---:|---:|---:|
+| SAM 3 | Instance Segmentation | 0.888 | 0.818 | **0.809** | – | – |
+| YOLO11n | Detection | 0.612 | 0.465 | – | 0.461 | **0.326** |
+| YOLO11l | Detection | 0.519 | 0.589 | – | 0.528 | **0.389** |
+
+
 
 ## Results and new parameters:
 This link takes you to a file containing the new weights obtained at the end of the fine-tuning phase: https://drive.google.com/file/d/1w3XW2gtmdcLUH3TAXct9jDZY0pvY4-Uw/view?usp=sharing
