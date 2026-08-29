@@ -60,9 +60,9 @@ Performance on the test set:
 
 | Model | Task | Precision | Recall | mIoU | mAP50 | mAP50:95 |
 |---|---|---:|---:|---:|---:|---:|
-| SAM 3 | Instance Segmentation | 0.888 | 0.818 | **0.809** | – | – |
-| YOLO11n | Detection | 0.612 | 0.465 | – | 0.461 | **0.326** |
-| YOLO11l | Detection | 0.519 | 0.589 | – | 0.528 | **0.389** |
+| SAM 3 | Instance Segmentation | 0.888 | 0.818 | 0.809 | – | – |
+| YOLO11n | Detection | 0.612 | 0.465 | – | 0.461 | 0.326 |
+| YOLO11l | Detection | 0.519 | 0.589 | – | 0.528 | 0.389 |
 
 
 
